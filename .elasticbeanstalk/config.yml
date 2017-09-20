@@ -2,6 +2,10 @@ branch-defaults:
   master:
     environment: test-simple-app
     group_suffix: null
+environment-defaults:
+  test-simple-app:
+    branch: null
+    repository: null
 global:
   application_name: sinatra_pgsql_eb_test
   branch: null
