@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.center {
+    text-align: center;
+}
+
+input {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+}
+
+.table {
+    margin: 0 auto;
+}
+
+.tableAlign {
+    text-align: right;
+}
+
+.btnSubmit {
+    margin-top: 5px;
+    position: relative;
+    left: 95px;
+}
