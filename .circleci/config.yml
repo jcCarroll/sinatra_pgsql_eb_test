@@ -41,9 +41,11 @@ jobs:
       # - run: bundle exec rake db:schema:load
 
       # run tests!
-      - run:
-          command: |
-            - ruby ./test/test.rb    
+      test:
+        - run:
+            name: run tests
+              command: |
+                - ruby ./test/test.rb    
 
       # collect reports
       - store_test_results:
