@@ -15,4 +15,9 @@ class LoginTestCase < Test::Unit::TestCase
         @driver.close
       end
 
+      def test_correct_url
+        actualURL = @driver.current_url
+        assert_equal("http://simple-app.aeye977yjr.us-west-2.elasticbeanstalk.com/", actualURL, "URL Did not match")
+      end
+
 end
