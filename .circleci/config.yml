@@ -46,7 +46,7 @@ jobs:
         command: |
           test:
             minitest_globs:
-              - test/*.rb         
+              - test/test.rb         
 
       # collect reports
       - store_test_results:
