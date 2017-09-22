@@ -44,7 +44,8 @@ jobs:
       - run:
           command: |
             test:
-              "test/test.rb"    
+              override:
+                - ruby test.rb    
 
       # collect reports
       - store_test_results:
