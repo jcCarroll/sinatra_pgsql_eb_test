@@ -43,10 +43,9 @@ jobs:
 
       # run tests!
       - run:
-          command: |
+          command:
             test:
-              minitest_globs:
-                - test/test.rb         
+              - test/test.rb         
 
       # collect reports
       - store_test_results:
