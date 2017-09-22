@@ -43,8 +43,8 @@ jobs:
 
       # run tests!
       - run:
-        command: |
-          test:
+          command: |
+            test:
               minitest_globs:
                 - test/test.rb         
 
