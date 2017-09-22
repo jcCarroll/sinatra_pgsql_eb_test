@@ -45,7 +45,7 @@ jobs:
       - run:
           command:
             test:
-              - test/test.rb         
+              "test/test.rb"    
 
       # collect reports
       - store_test_results:
