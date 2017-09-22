@@ -43,9 +43,9 @@ jobs:
 
       # run tests!
       - run:
-        test:
-          minitest_globs:
-            - test/*.rb         
+          test:
+            minitest_globs:
+              - test/*.rb         
 
       # collect reports
       - store_test_results:
