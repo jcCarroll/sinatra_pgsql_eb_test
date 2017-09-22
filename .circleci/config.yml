@@ -41,7 +41,7 @@ jobs:
       # - run: bundle exec rake db:schema:load
 
       # run tests!
-      test:
+      - test:
         - run:
             name: run tests
               command: |
