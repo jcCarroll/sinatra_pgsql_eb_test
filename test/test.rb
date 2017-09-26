@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'selenium-webdriver'
 require 'test/unit'
-require 'rake'
+# require 'rake'
 
 class SelTestCase < Test::Unit::TestCase
     

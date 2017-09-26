@@ -28,10 +28,10 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  minitest (~> 5.8, >= 5.8.4)
+  minitest
   pg
-  rake (~> 11.2, >= 11.2.2)
-  selenium-webdriver (~> 2.48, >= 2.48.1)
+  rake
+  selenium-webdriver
   sinatra
 
 BUNDLED WITH
