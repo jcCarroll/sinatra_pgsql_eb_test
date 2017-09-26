@@ -7,6 +7,7 @@ GEM
     minitest (5.10.3)
     mustermann (1.0.1)
     pg (0.21.0-x64-mingw32)
+    power_assert (0.2.6)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
@@ -21,6 +22,8 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.0)
       tilt (~> 2.0)
+    test-unit (3.1.5)
+      power_assert
     tilt (2.0.8)
     websocket (1.2.4)
 
@@ -33,6 +36,7 @@ DEPENDENCIES
   rake
   selenium-webdriver
   sinatra
+  test-unit
 
 BUNDLED WITH
    1.15.4
