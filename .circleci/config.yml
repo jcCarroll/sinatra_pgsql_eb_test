@@ -43,7 +43,7 @@ jobs:
       # run tests!
       - run:
           command: |
-            bundle exec rake --trace
+            bundle exec rake
 
       # collect reports
       - store_test_results:
