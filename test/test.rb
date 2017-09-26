@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'selenium-webdriver'
 require 'test/unit'
-# require 'rake'
 
 class SelTestCase < Test::Unit::TestCase
     
@@ -22,13 +21,3 @@ class SelTestCase < Test::Unit::TestCase
       end
 
 end
-
-# require "minitest/autorun"
-
-# class TestISBN < Minitest::Test
-
-#   def test_one_is_one
-#     assert_equal(1,2)
-#   end
-
-# end
