@@ -43,7 +43,7 @@ jobs:
       # run tests!
       - run:
           command: |
-            ./test/test.rb    
+            bundle exec rspec    
 
       # collect reports
       - store_test_results:
