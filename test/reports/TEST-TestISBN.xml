@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite time='0.000070' skipped='0' failures='1' errors='0' name="TestISBN" assertions='1' tests='1'>
-  <testcase time='0.000070' file="spec/test.rb" name="test_one_is_one" assertions='1'>
-    <failure type='Minitest::Assertion' message="Expected: 1&#13;&#10;  Actual: 2">C:/Users/Jacob Carroll/Documents/code/github/jake/sinatra_pgsql_eb_test/spec/test.rb:30:in `test_one_is_one&#39;
-    </failure>
-  </testcase>
-</testsuite>
