@@ -2,7 +2,7 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'test/unit'
 
-class LoginTestCase < Test::Unit::TestCase
+class TestTestCase < Test::Unit::TestCase
     
       def setup
         caps = Selenium::WebDriver::Remote::Capabilities.chrome(chromeOptions: { args: [ "--headless" ]})
