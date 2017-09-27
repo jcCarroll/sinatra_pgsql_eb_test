@@ -55,4 +55,4 @@ jobs:
       # deploy to eb
       - run:
           command: |
-            sudo pip install awsebcli
+            pip install awsebcli --upgrade --user
