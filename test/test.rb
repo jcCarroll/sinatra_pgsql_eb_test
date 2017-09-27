@@ -17,7 +17,7 @@ class SelTestCase < Test::Unit::TestCase
 
       def test_correct_url
         actualURL = @driver.current_url
-        assert_equal("http://simple-app.aeye977yjr.us-west-2.elasticbeanstalk.com/", actualURL, "URL Did not match")
+        assert_equal("http://app.aeye977yjr.us-west-2.elasticbeanstalk.com/", actualURL, "URL Did not match")
       end
 
 end
