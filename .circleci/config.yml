@@ -53,6 +53,6 @@ jobs:
           destination: test-results
       
       # deploy to eb
-      - dependencies:
-          pre:
+      - run:
+          command: |
             pip install awsebcli
