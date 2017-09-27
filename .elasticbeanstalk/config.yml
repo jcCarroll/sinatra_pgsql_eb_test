@@ -1,6 +1,6 @@
 branch-defaults:
   master:
-    environment: DevTestDeployWDB
+    environment: Production
     group_suffix: null
 global:
   application_name: sinatra_pgsql_eb_test
