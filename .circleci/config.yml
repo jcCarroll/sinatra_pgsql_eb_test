@@ -19,10 +19,6 @@ jobs:
     steps:
       - checkout
 
-      - dependencies:
-          pre:
-            pip install awsebcli
-
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -54,4 +50,8 @@ jobs:
           path: /tmp/test-results
       - store_artifacts:
           path: /tmp/test-results
-          destination: test-results
+          destination: test-results      
+
+      - dependencies:
+          pre:
+            pip install awsebcli
