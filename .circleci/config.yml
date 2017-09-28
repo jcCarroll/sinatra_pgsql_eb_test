@@ -21,7 +21,7 @@ jobs:
 
       - run:
           command: |
-            apt install python-pip python-dev
+            sudo apt install python-pip python-dev
 
       - deploy:
           name: Deploy EB
