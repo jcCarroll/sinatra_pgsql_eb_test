@@ -25,11 +25,10 @@ jobs:
 
       - deploy:
           command: |
-            develop:
-              branch: development
-              commands:
-                - eb use DevENV --profile default
-                - eb deploy --profile default
+            branch: development
+            commands:
+              - eb use DevENV --profile default
+              - eb deploy --profile default
 
             production:
               branch: master
