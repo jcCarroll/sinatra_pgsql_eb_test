@@ -19,6 +19,10 @@ jobs:
     steps:
       - checkout
 
+      - dependencies:
+          pre:
+            pip install awsebcli
+
       # Download and cache dependencies
       - restore_cache:
           keys:
