@@ -45,8 +45,8 @@ jobs:
       - deploy:
           name: Deploy EB
           command: |
-            - eb use DevENV --profile default
-            - eb deploy --profile default
+            eb use DevENV --profile default
+            eb deploy --profile default
 
       - save_cache:
           paths:
