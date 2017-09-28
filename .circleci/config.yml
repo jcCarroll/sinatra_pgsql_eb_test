@@ -26,8 +26,8 @@ jobs:
       - deploy:
           name: Deploy EB
           command: |
-            elasticbeanstalk use DevENV --profile default
-            elasticbeanstalk deploy --profile default
+            aws elasticbeanstalk use DevENV --profile default
+            aws elasticbeanstalk deploy --profile default
 
 #       # Download and cache dependencies
 #       - restore_cache:
