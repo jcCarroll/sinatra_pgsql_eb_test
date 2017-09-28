@@ -34,8 +34,8 @@ jobs:
       - deploy:
           name: Deploy EB
           command: |
-            aws elasticbeanstalk use DevENV --profile default
-            aws elasticbeanstalk deploy --profile default
+            eb use DevENV --profile default
+            eb deploy --profile default
 
 #       - run:
 #           name: install dependencies
