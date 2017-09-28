@@ -46,7 +46,7 @@ jobs:
       - deploy:
           name: Deploy EB
           command: |
-            bash ./setup-eb.sh
+            bash scripts/setup-eb.sh
             eb use DevENV
             eb deploy
 
