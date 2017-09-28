@@ -23,7 +23,7 @@ jobs:
           command: |
             pip install awsebcli
 
-      - deployment:
+      - deploy:
           develop:
             branch: development
             commands:
