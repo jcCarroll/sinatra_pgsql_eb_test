@@ -24,21 +24,12 @@ jobs:
       #       pip install awsebcli
 
       - deploy:
+          name: Deploy EB
           command: |
-            branch: development
-            commands:
+            if [ "${CIRCLE_BRANCH}" == "deployment" ]; then
               - eb use DevENV --profile default
               - eb deploy --profile default
-
-            production:
-              branch: master
-              commands:
-                - eb use Production --profile default
-                - eb deploy --profile default
-
-
-
-
+            fi
 
 #       # Download and cache dependencies
 #       - restore_cache:
