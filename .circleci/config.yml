@@ -19,20 +19,20 @@ jobs:
     steps:
       - checkout
 
-    dependencies:
-        pre:
-          - pip install awsebcli
-    deployment:
-      develop:
-        branch: development
+      dependencies:
+          pre:
+            - pip install awsebcli
+      deployment:
+        develop:
+          branch: development
+          commands:
+            - eb use DevENV --profile default
+            - eb deploy --profile default
+      production:
+        branch: master
         commands:
-          - eb use DevENV --profile default
+          - eb use Production --profile default
           - eb deploy --profile default
-    production:
-      branch: master
-      commands:
-        - eb use Production --profile default
-        - eb deploy --profile default
 
 
 
