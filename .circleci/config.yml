@@ -27,20 +27,26 @@ jobs:
           - v1-dependencies-
 
       - run:
+          name: Install Python PIP and AWSEBCLI
           command: |
             sudo apt install python-pip python-dev
             sudo pip install awsebcli
-
-      - deploy:
-          name: Deploy EB
-          command: |
-            eb use DevENV --profile default
-            eb deploy --profile default
 
 #       - run:
 #           name: install dependencies
 #           command: |
 #             bundle install --jobs=4 --retry=3 --path vendor/bundle
+
+#       # run tests!
+#       - run:
+#           command: |
+#             rake test
+
+      - deploy:
+          name: Deploy EB
+          command: |
+            - eb use DevENV --profile default
+            - eb deploy --profile default
 
       - save_cache:
           paths:
@@ -51,20 +57,11 @@ jobs:
 #       # - run: bundle exec rake db:create
 #       # - run: bundle exec rake db:schema:load
 
-#       # run tests!
-#       - run:
-#           command: |
-#             rake test
+
 
 #       # collect reports
 #       - store_test_results:
 #           path: /tmp/test-results
 #       - store_artifacts:
 #           path: /tmp/test-results
-#           destination: test-results      
-
-      # - deploy:
-      #     name: Deploy to EB
-      #     command: |
-      #       if [ "${CIRCLE_BRANCH}" == "development" ]; then
-      #       pip install awsebcli
+#           destination: test-results
