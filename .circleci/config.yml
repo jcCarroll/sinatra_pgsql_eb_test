@@ -46,9 +46,10 @@ jobs:
       - deploy:
           name: Deploy EB
           command: |
-            bash scripts/setup-eb.sh
-            eb use DevENV
-            eb deploy
+            if [ "${CIRCLE_BRANCH}" == "development" ]; then
+              eb use DevENV
+              eb deploy
+            fi            
 
       - save_cache:
           paths:
