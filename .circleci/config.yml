@@ -19,9 +19,9 @@ jobs:
     steps:
       - checkout
 
-      # - run:
-      #     command: |
-      #       pip install awsebcli
+      - run:
+          command: |
+            apt install python-pip python-dev
 
       - deploy:
           name: Deploy EB
