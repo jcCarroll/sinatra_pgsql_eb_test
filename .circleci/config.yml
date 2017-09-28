@@ -19,53 +19,47 @@ jobs:
     steps:
       - checkout
 
-      # - run:
-      #     command: |
-      #       pip install awsebcli
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
 
-      - deploy:
-          name: Deploy EB
+      - run:
+          name: Install Python PIP and AWSEBCLI
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              - eb use Production --profile default
-              - eb deploy --profile default
-            fi
-
-#       # Download and cache dependencies
-#       - restore_cache:
-#           keys:
-#           - v1-dependencies-{{ checksum "Gemfile.lock" }}
-#           # fallback to using the latest cache if no exact match is found
-#           - v1-dependencies-
+            sudo apt install python-pip python-dev --upgrade
+            sudo easy_install --upgrade six
+            sudo pip install awsebcli
 
 #       - run:
 #           name: install dependencies
 #           command: |
 #             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
-#       - save_cache:
-#           paths:
-#             - ./vendor/bundle
-#           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-        
-#       # # Database setup
-#       # - run: bundle exec rake db:create
-#       # - run: bundle exec rake db:schema:load
-
 #       # run tests!
 #       - run:
 #           command: |
 #             rake test
+
+      - deploy:
+          name: Deploy EB
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "development" ]; then
+              scripts/deploy
+              eb use DevENV --profile default
+              eb deploy --profile default
+            fi            
+
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
 #       # collect reports
 #       - store_test_results:
 #           path: /tmp/test-results
 #       - store_artifacts:
 #           path: /tmp/test-results
-#           destination: test-results      
-
-      # - deploy:
-      #     name: Deploy to EB
-      #     command: |
-      #       if [ "${CIRCLE_BRANCH}" == "development" ]; then
-      #       pip install awsebcli
+#           destination: test-results
