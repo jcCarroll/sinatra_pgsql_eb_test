@@ -47,7 +47,7 @@ jobs:
           name: Deploy EB
           command: |
             if [ "${CIRCLE_BRANCH}" == "development" ]; then
-              scripts/deploy
+              scripts/deploy.sh
               eb use DevENV --profile default
               eb deploy --profile default
             fi            
