@@ -19,6 +19,13 @@ jobs:
     steps:
       - checkout
 
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
       - run:
           command: |
             sudo apt install python-pip python-dev
@@ -29,22 +36,15 @@ jobs:
             aws elasticbeanstalk use DevENV --profile default
             aws elasticbeanstalk deploy --profile default
 
-#       # Download and cache dependencies
-#       - restore_cache:
-#           keys:
-#           - v1-dependencies-{{ checksum "Gemfile.lock" }}
-#           # fallback to using the latest cache if no exact match is found
-#           - v1-dependencies-
-
 #       - run:
 #           name: install dependencies
 #           command: |
 #             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
-#       - save_cache:
-#           paths:
-#             - ./vendor/bundle
-#           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
         
 #       # # Database setup
 #       # - run: bundle exec rake db:create
