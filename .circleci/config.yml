@@ -26,10 +26,10 @@ jobs:
       - deploy:
           name: Deploy EB
           command: |
-            if [ "${CIRCLE_BRANCH}" == "deployment" ]; then
+            if [ "${CIRCLE_BRANCH}" == "deployment" ];
               eb use DevENV --profile default
               eb deploy --profile default
-            else [ "${CIRCLE_BRANCH}" == "master" ]; then
+            else [ "${CIRCLE_BRANCH}" == "master" ];
               eb use Production --profile default
               eb deploy --profile default
             fi
