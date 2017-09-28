@@ -19,9 +19,9 @@ jobs:
     steps:
       - checkout
 
-      - run:
-          command: |
-            pip install awsebcli
+      # - run:
+      #     command: |
+      #       pip install awsebcli
 
       - deploy:
           command: |
