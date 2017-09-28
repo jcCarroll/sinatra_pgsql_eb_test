@@ -30,6 +30,7 @@ jobs:
           name: Install Python PIP and AWSEBCLI
           command: |
             sudo apt install python-pip python-dev --upgrade
+            sudo easy_install --upgrade six
             sudo pip install awsebcli
 
 #       - run:
