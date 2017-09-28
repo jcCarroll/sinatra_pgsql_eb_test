@@ -1,4 +1,6 @@
 branch-defaults:
+  development:
+    environment: DevENV
   master:
     environment: Production
     group_suffix: null
