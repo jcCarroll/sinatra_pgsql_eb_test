@@ -27,7 +27,7 @@ jobs:
           name: Deploy EB
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              eb use production --profile default
+              eb use Production --profile default
               eb deploy --profile default
             fi
 
