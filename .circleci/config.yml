@@ -48,8 +48,6 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "development" ]; then
               sh scripts/deploy.sh
-              eb use DevENV --profile default
-              eb deploy --profile default
             fi            
 
       - save_cache:
