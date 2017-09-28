@@ -3,7 +3,7 @@ branch-defaults:
     environment: DevENV
 environment-defaults:
   DevENV:
-    branch: null
+    branch: development
     repository: null
 global:
   application_name: sinatra_pgsql_eb_test
