@@ -27,8 +27,8 @@ jobs:
           name: Deploy EB
           command: |
             if [ "${CIRCLE_BRANCH}" == "devlopment" ]; then
-              - eb use DevENV --profile default
-              - eb deploy --profile default
+              eb use DevENV --profile default
+              eb deploy --profile default
             fi
 
 #       # Download and cache dependencies
