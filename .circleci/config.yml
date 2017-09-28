@@ -29,6 +29,9 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "deployment" ]; then
               - eb use DevENV --profile default
               - eb deploy --profile default
+            else [ "${CIRCLE_BRANCH}" == "master" ]; then
+              - eb use Production --profile default
+              - eb deploy --profile default
             fi
 
 #       # Download and cache dependencies
