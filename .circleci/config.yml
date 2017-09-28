@@ -33,15 +33,15 @@ jobs:
             sudo easy_install --upgrade six
             sudo pip install awsebcli
 
-#       - run:
-#           name: install dependencies
-#           command: |
-#             bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - run:
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
 
-#       # run tests!
-#       - run:
-#           command: |
-#             rake test
+      # run tests!
+      - run:
+          command: |
+            rake test
 
       - deploy:
           name: Deploy EB
@@ -55,9 +55,9 @@ jobs:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-#       # collect reports
-#       - store_test_results:
-#           path: /tmp/test-results
-#       - store_artifacts:
-#           path: /tmp/test-results
-#           destination: test-results
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results
