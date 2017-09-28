@@ -43,11 +43,23 @@ jobs:
 #           command: |
 #             rake test
 
-      - deploy:
-          name: Deploy EB
-          command: |
-            eb use DevENV --profile default
-            eb deploy --profile default
+      - deployment:
+          development:
+            branch: development
+            command: |
+              eb use DevENV --profile default
+              eb deploy --profile default
+          production:
+            branch: master
+            command: |
+              eb use Production --profile default
+              eb deploy --profile default
+
+      # - deploy:
+      #     name: Deploy EB
+      #     command: |
+      #       eb use DevENV --profile default
+      #       eb deploy --profile default
 
       - save_cache:
           paths:
