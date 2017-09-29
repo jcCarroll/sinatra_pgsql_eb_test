@@ -16,7 +16,9 @@ def connection()
 end
 
 get '/' do
-    erb :index
+    fname = params[:fname] || ""
+    lname = params[:lname] || ""
+    erb :index, :locals => {:fname => fname, :lname => lname}
 end
 
 post '/add_info' do
@@ -27,5 +29,5 @@ post '/add_info' do
     db.exec ("INSERT INTO names (first, last) VALUES ('#{first}', '#{last}')")
     db.close
 
-    redirect '/'
+    redirect '/?fname=' + first '&lname=' + last
 end
