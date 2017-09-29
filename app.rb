@@ -29,5 +29,5 @@ post '/add_info' do
     db.exec ("INSERT INTO names (first, last) VALUES ('#{first}', '#{last}')")
     db.close
 
-    redirect '/?fname=' + first '&lname=' + last
+    redirect '/?fname=' + first + '&lname=' + last
 end
