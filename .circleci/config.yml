@@ -47,9 +47,9 @@ jobs:
           name: Deploy EB
           command: |
             if [ "${CIRCLE_BRANCH}" == "development" ]; then
-              sh circleci/scripts/deploydev.sh
+              sh scripts/deploydev.sh
             else
-              sh circleci/scripts/deploypro.sh
+              sh scripts/deploypro.sh
             fi            
 
       - save_cache:
