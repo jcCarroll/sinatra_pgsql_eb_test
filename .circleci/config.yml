@@ -26,12 +26,12 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run:
-          name: Install Python PIP and AWSEBCLI
-          command: |
-            sudo apt install python-pip python-dev --upgrade
-            sudo easy_install --upgrade six
-            sudo pip install awsebcli
+      # - run:
+      #     name: Install Python PIP and AWSEBCLI
+      #     command: |
+      #       sudo apt install python-pip python-dev --upgrade
+      #       sudo easy_install --upgrade six
+      #       sudo pip install awsebcli
 
       - run:
           name: install dependencies
@@ -43,14 +43,21 @@ jobs:
           command: |
             rake test
 
+      # - deploy:
+      #     name: Deploy EB
+      #     command: |
+      #       if [ "${CIRCLE_BRANCH}" == "development" ]; then
+      #         sh scripts/deploydev.sh
+      #       else
+      #         sh scripts/deploypro.sh
+      #       fi
+
       - deploy:
-          name: Deploy EB
+          name: Deploy Heroku
           command: |
             if [ "${CIRCLE_BRANCH}" == "development" ]; then
-              sh scripts/deploydev.sh
-            else
-              sh scripts/deploypro.sh
-            fi            
+              sh circleci/setup-heroku.sh
+            fi
 
       - save_cache:
           paths:
